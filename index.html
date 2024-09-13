@@ -1,1 +1,636 @@
-<h1>欢迎来到Queue520的主页</h1>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="master,化学，化学实验与方程式">
+		<title>master宝典</title>
+		<script>
+			'use strict';
+			window.MathJax={
+				tex:{inlineMath:[['$','$']]},
+				svg:{fontCache:'global'}
+			};
+       function diso2()
+       {
+     	    document.getElementById('o2').style.display='none';
+       }
+       function disacid()
+       {
+     	    document.getElementById('acid').style.display='none';
+       }
+       function dismain()
+       {
+            document.getElementById('main').style.display='none';
+       }
+       function disabout()
+       {
+            document.getElementById('about').style.display='none';
+       }
+       function disalkali()
+       {
+			document.getElementById('alkali').style.display='none';
+	   }
+       function dispss()
+       {
+			document.getElementById('pss').style.display='none';
+       }
+            
+        function disall()
+        {
+            dismain();
+            diso2();
+            disacid();
+            disabout();
+            dispss();
+            disalkali();
+        }
+		function showmain()
+        {
+            disall();
+			document.getElementById('main').style.display='block';
+					
+		}
+	    function showo2()
+        {
+            disall();
+			document.getElementById('o2').style.display='block';
+		}
+		function showpss()
+        {
+            disall();
+			document.getElementById('pss').style.display='block';
+		}
+        function showacid()
+        {
+            disall();
+			document.getElementById('acid').style.display='block';
+		}
+        function showalkali()
+        {
+            disall();
+			document.getElementById('alkali').style.display='block';
+		}
+		function showabout()
+        {
+            disall();
+			document.getElementById('about').style.display='block';	
+		}
+         //打印界面 
+		function EnterPrintMode() 
+        {
+				// 暂时移除界面元素
+				document.getElementsByClassName('title')[0].style.display = "none";
+				document.getElementById('about').style.display = "none";
+				document.getElementById('main-s').style.display = "none";
+				document.getElementById('o2-s').style.display = "none";
+           		document.getElementById('acid-s').style.display = "none";
+           		document.getElementById('alkali-s').style.display = "none";
+				document.getElementById('pss-s').style.display = "none";
+				document.getElementById('CardHoverEffect').disabled = 1;
+				//O2 UI
+				let o2 = document.getElementById('o2');
+				o2.style.display = 'block';
+				o2.style.marginTop = "10px";
+				let tmp = document.createElement('h2');
+				tmp.innerText = "O2";
+				o2.insertBefore(tmp, o2.firstChild);
+          		 //酸 UI
+				let acid = document.getElementById('acid');
+				acid.style.display = 'block';
+				acid.style.marginTop = "10px";
+				tmp = document.createElement('h2');
+				tmp.innerText = "酸";
+				acid.insertBefore(tmp, acid.firstChild);
+        	    //碱 UI
+				let alkali = document.getElementById('alkali');
+				alkali.style.display = 'block';
+				alkali.style.marginTop = "10px";
+				tmp = document.createElement('h2');
+				tmp.innerText = "碱";
+				alkali.insertBefore(tmp, alkali.firstChild);
+				// 化学 UI
+				let main = document.getElementById('main');
+				main.style.display = 'block';
+				main.style.marginTop = "10px";
+				tmp = document.createElement('h2');
+				tmp.innerText = "化学";
+				main.insertBefore(tmp, main.firstChild);
+		   }
+		function ExitPrintMode()
+      	{
+			// 暂时移除界面元素
+			document.getElementsByClassName('title')[0].style.display = "flex";
+			document.getElementById('about').style.display = "block";
+			document.getElementById('main-s').style.display = "block";
+			document.getElementById('o2-s').style.display = "block";
+      		document.getElementById('acid-s').style.display = "block";
+      		document.getElementById('alkali-s').style.display = "block";
+			document.getElementById('pss-s').style.display = "block";
+			document.getElementById('CardHoverEffect').disabled = 0;
+			// O2 UI
+			let o2 = document.getElementById('o2');
+			o2.style.display = 'none';
+			o2.style.marginTop = "80px";
+			o2.firstChild.remove();
+         	// 酸 UI
+			let acid = document.getElementById('acid');
+			acid.style.display = 'none';
+			acid.style.marginTop = "80px";
+			acid.firstChild.remove();
+        	//碱 UI
+			let alkali = document.getElementById('alkali');
+			alkali.style.display = 'none';
+			alkali.style.marginTop = "80px";
+			alkali.firstChild.remove();
+			// 化学UI
+			let main = document.getElementById('main');
+			main.style.display = 'none';
+			main.style.marginTop = "80px";
+			main.firstChild.remove();
+		}
+     
+		function printall()
+        {
+			EnterPrintMode();
+			window.print();
+			ExitPrintMode();
+		}
+			// 搜索代码
+			window.onload = ()=>{
+				(function() {
+					function f() {
+                      
+						let ele = document.getElementsByClassName("maincard");
+						let box1 = document.getElementById("maininputbox");
+						let box2v = document.getElementById("maininputbox2").checked;
+						for (let i = 0; i < ele.length; i++)
+							if (box2v) 
+                   {
+								if (ele[i].innerText.includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							} 
+                   else 
+                   {
+								if (ele[i].dataset["key"].includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							}
+					}
+					document.getElementById("maininputbox").addEventListener('input', f);
+					document.getElementById("maininputbox2").addEventListener('input', f);
+				})();
+				(function() {
+					function f() {
+						let ele = document.getElementsByClassName("o2card");
+						let box1 = document.getElementById("o2inputbox");
+						let box2v = document.getElementById("o2inputbox2").checked;
+						for (let i = 0; i < ele.length; i++)
+							if (box2v) 
+                   			{
+								if (ele[i].innerText.includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							} 
+							else
+							{
+								if (ele[i].dataset["key"].includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							}
+						}
+					document.getElementById("o2inputbox").addEventListener('input', f);
+					document.getElementById("o2inputbox2").addEventListener('input', f);
+				})();
+           (function() {
+					function f() {
+						let ele = document.getElementsByClassName("acidcard");
+						let box1 = document.getElementById("acidinputbox");
+						let box2v = document.getElementById("acidinputbox2").checked;
+						for (let i = 0; i < ele.length; i++)
+							if (box2v)
+                  			 {
+								if (ele[i].innerText.includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							} 
+							else
+							{
+								if (ele[i].dataset["key"].includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							}
+					}
+					document.getElementById("acidinputbox").addEventListener('input', f);
+					document.getElementById("acidinputbox2").addEventListener('input', f);
+				})();
+           (function() {
+					function f() {
+						let ele = document.getElementsByClassName("alkalicard");
+						let box1 = document.getElementById("alkaliinputbox");
+						let box2v = document.getElementById("alkaliinputbox2").checked;
+						for (let i = 0; i < ele.length; i++)
+							if (box2v)
+							{
+								if (ele[i].innerText.includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							} 
+							else
+							{
+								if (ele[i].dataset["key"].includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							}
+					}
+					document.getElementById("alkaliinputbox").addEventListener('input', f);
+					document.getElementById("alkaliinputbox2").addEventListener('input', f);
+				})();
+				(function() {
+					function f() {
+						let ele = document.getElementsByClassName("psscard");
+						let box1 = document.getElementById("pssinputbox");
+						let box2v = document.getElementById("pssinputbox2").checked;
+						for (let i = 0; i < ele.length; i++)
+							if (box2v)
+							{
+								if (ele[i].innerText.includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							} 
+							else
+							{
+								if (ele[i].dataset["key"].includes(box1.value)) ele[i].style.display = "block";
+								else ele[i].style.display = "none";
+							}
+					}
+					document.getElementById("pssinputbox").addEventListener('input', f);
+					document.getElementById("pssinputbox2").addEventListener('input', f);
+				})();
+			}
+		</script>
+      <script type="text/javascript">
+   function getCurrentDate(format) {
+     var now = new Date();
+     var year = now.getFullYear(); //得到年份
+     var month = now.getMonth();//得到月份
+     var date = now.getDate();//得到日期
+     var day = now.getDay();//得到周几
+     var hour = now.getHours();//得到小时
+     var minu = now.getMinutes();//得到分钟
+     var sec = now.getSeconds();//得到秒
+     month = month + 1;
+     if (month < 10) month = "0" + month;
+     if (date < 10) date = "0" + date;
+     if (hour < 10) hour = "0" + hour;
+     if (minu < 10) minu = "0" + minu;
+     if (sec < 10) sec = "0" + sec;
+     var time = "";
+     //精确到天
+     if(format==1){ time = year + "-" + month + "-" + date; }
+     //精确到分
+     else if(format==2){time = year + "-" + month + "-" + date+ " " + hour + ":" + minu + ":" + sec;}
+     return time;
+  }
+</script>
+<script type="text/javascript">
+ setInterval(function() {
+         $('#aa').text(getCurrentDate(2));
+}, 1000);
+</script>
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+      <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="title">
+			<h1 style>&nbsp;master宝典</h1>
+			<div style="height:20px; margin-top:30px; font-size:20px;color:#000;">
+				&emsp;<button onclick="showmain();" class="m">化学</button>
+				&nbsp;<button onclick="showo2();" class="m">O₂</button>
+          		&nbsp;<button onclick="showacid();" class="m">酸</button>
+           		&nbsp;<button onclick="showalkali();" class="m">碱</button>
+				&nbsp;<button onclick="showpss();" class="m">解题&技巧</button>
+				&nbsp;<button onclick="showabout();" class="m">关于</button>
+           <div id="aa" style="font-size:15px; margin-top:-22px; margin-left:350px"></div>
+			</div>
+          
+		</div>
+      <!化学>
+		<div id="main" style="display:block; margin-top:80px;">
+			<div id="main-s">
+				<input type="text" placeholder="搜索关键词" id="maininputbox">
+				<input type="checkbox" id="maininputbox2">全文搜索
+			</div>
+
+			<div class="card maincard" data-key="化学性质">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>化学性质</h2>
+						<p>化学性质是物质在化学变化中表现出来的性质。
+							如所属物质类别的化学通性：酸性、碱性、氧化性、还原性、热稳定性及一些其它特性。
+							化学性质与化学变化是任何物质所固有的特性，如氧气这一物质，具有助燃性为其化学性质；同时氧气能与氢气发生化学反应产生水，为其化学性质
+					</div>
+				</div>
+			</div>
+			<div class="card maincard" data-key="化学反应（变化）">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>化学反应（变化）</h2>
+						<p>化学反应是指分子破裂成原子，原子重新排列组合生成新分子的过程。在反应中常伴有发光、发热、变色、生成沉淀物等，判断一个反应是否为化学反应的依据是反应是否生成新的分子（产生了新的物质）。
+							核反应不属于化学反应。离子反应是化学反应。
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="o2" style="display:none; margin-top:80px;">
+			<div id="o2-s">
+				<input type="text" placeholder="搜索关键词" id="o2inputbox">
+				<input type="checkbox" id="o2inputbox2">全文搜索
+			</div>
+
+			<div class="card o2card" data-key="性质">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>性质</h2>
+						<p>氧气，一般形式为气态，不溶于水，氧气的密度大于空气。在空气中，一般氧气含量为21%
+					</div>
+				</div>
+			</div>
+          
+			<div class="card o2card" data-key="制取">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>※制取</h2>
+                <p></p>
+						<h3>1.方法</h3>
+						<p>氧气的制取一般有三种方法(最后一种不推荐使用也不考，仅做了解)
+						<p>$I.$高锰酸钾制氧气:2KMnO₄$\displaystyle\frac{&nbsp;△&nbsp;}{}$K₂MnO₄+MnO₂+O₂↑
+						<p>$II.$氯酸钾制氧气:2KClO₃$\displaystyle\frac{△}{MnO₂}$2KCl+3O₂↑
+						<p>$III.$过氧化氢制氧气:2H₂O₂$\displaystyle\frac{MnO₂}{}$2H₂O+O₂↑
+						<p>$IV.$暴力制氧(<del>用了小心吃暴力<del>)
+						<h4>现象:有白雾，剧烈反应，释放的氧气量增加</h4>
+						<p>中性环境:2KMnO₄+3H₂O₂══2MnO₂+2KOH+3O₂↑+2H₂O
+						<p>酸性环境:2KMnO₄+5H₂O₂+3H₂SO₄══K₂SO₄+2MnSO₄+5O₂↑+8H₂O
+                <p>碱性环境:2KMnO₄+H₂O₂+2KOH══2K₂MnO₄+O₂↑+2H₂O		
+					</div>
+				</div>
+			</div>
+                  
+		</div>
+     <!酸>
+     <div id="acid" style="display:none; margin-top:80px;">
+			<div id="acid-s">
+				<input type="text" placeholder="搜索关键词" id="acidinputbox">
+				<input type="checkbox" id="acidinputbox2">全文搜索
+			</div>
+       <div class="card acidcard" data-key="定义">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>酸的定义</h2>
+                 <p>在水中能够电离出$H^+$和酸根离子的物质叫做<strong>酸(acid)</strong></p>
+					</div>
+				</div>
+			</div>
+       <div class="card acidcard" data-key="酸的分类">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>酸的分类</h2>
+                 <p>酸的分类一般有两种
+                 <h4>1.是否含有氧元素</h4>
+                 <p>$I.$含氧酸,读法：某酸</p>
+                 <p>例如H$_2$SO$_4$（硫酸）,HNO$_3$（硝酸）,H$_2$CO$_3$（碳酸）</p>
+                 <p>$II.$无氧酸,读法：氢某酸</p>
+                 <p>例如HF（氢氟酸），HCl（氢氯酸）</p>
+                 <h4>2.含有氢原子的个数</h4>
+                 <p>1个氢原子 → 一元酸 </p>
+                 <p>2个氢原子 → 二元酸 </p>
+                 <p>3个氢原子 → 三元酸 </p>
+                 <p>>3个氢原子 → 多元酸 </p>
+					</div>
+				</div>
+			</div>
+       <div class="card acidcard" data-key="共性">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+						<h2>酸的共性</h2>
+                <p>由于所有的酸都能电离产生H$^+$，所以所有酸都有一些相同的性质，即<strong>酸的共性</strong></p>
+                <h4>1.酸能与指示剂反应</h4>
+                <p> 酸能使石蕊试液变红（其pH值>7）,但酸不能让无色酚酞变色</p>
+                <h4>2.酸+碱→盐+水</h4>
+                <p>酸和碱的反应叫做<strong>中和反应</strong>。中和反应<strong>不需要任何条件</strong>，只要是酸和碱都能反应。其本质就是<strong>复分解反应</strong></p>
+                <p><strong>复分解反应（double decomposition reaction）</strong>：由于化合物互相交换成分生成新化合物的反应</p>
+                <h4>3.酸+盐→新盐+新酸</h4>
+                <h4>4.酸+某些金属氧化物→盐+水</h4>
+                <h4>5.酸+活泼金属→盐+H$_2$↑</h4>
+                <p>在这条反应当中，活泼金属将酸当中的氢分离出来，自己和酸根结合，本质就是<strong>置换反应</strong>（<del>没学</del>）</p>
+                 <p><strong>置换反应（displacement reaction）</strong>：一种单质和一种化合物发生反应生成另一种单质和另一种化合物的反应。</p>
+                 <p>这条反应也是实验室制取氢气的常用方法</p>
+					</div>
+				</div>
+			</div>
+     <h1>常见的酸</h1>
+		<div class="card acidcard" data-key="盐酸">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                        <h2>盐酸 HCl</h2>
+                        <p>盐酸（hydrochloric acid）是工业上常用的酸，他的化学式是HCl，相对分子质量36.5</p>
+                        <h3>个性</h3>
+                        <p>1.盐酸是氯化氢(HCl)气体的水溶液</p>
+                        <p>2.纯净的盐酸是无色透明的，工业上的盐酸常显黄色，因为其中含有FeCl$_3$等杂质</p>
+                        <p>3.浓盐酸具有刺激性气味</p>
+                        <p>4.浓盐酸具有<strong>挥发性</strong></p>
+                        <p>5.盐酸具有<strong>腐蚀性</strong></p>
+                        <h3>共性</h3>
+                        <h4>1.盐酸+碱→盐+水</h4>
+                        <p>HCl+NaOH══NaCl+H$_2$O</p>
+                        <p>3HCl+Al(OH)$_3$══AlCl$_3$+3H$_2$O</p>
+                        <p>HCl+Cu(OH)$_2$══2FeCl$_3$+3H$_2$O</p>
+                        <h4>2.盐酸+某些盐→新酸+新盐</h4>
+                        <p>2HCl+CaCO$_3$══CaCl$_2$+CO$_2$↑+H$_2$O，现象：碳酸钙表面冒出气泡，这是<strong>实验室制取二氧化碳</strong>的常用方法</p> 
+                        <p>2HCl+Na$_2$CO$_3$══2NaCl+CO$_2$↑+H$_2$O，这条一般在溶液中用来除掉Na$_2$CO$_3$</p>
+                        <h4>3.盐酸+某些金属氧化物→盐+水</h4>
+                        <p>2HCl+CuO══CuCl$_2$+H$_2$O，其中CuO是<strong>黑色固体</strong>，现象：黑色固体消失，溶液变为蓝色</p>
+                        <p>6HCl+Fe$_2$O$_3$══CuCl$_2$+H$_2$O，其中Fe$_2$O$_3$是<strong>红褐色固体</strong>，即铁锈，所以这条反应一般用来除锈。现象：红褐色固体消失，溶液变为浅黄色</p>
+                        <h4>4.盐酸+活泼金属→盐+氢气</h4>
+                        <p>6HCl+2Fe══2FeCl$_3$+3H$_2$↑</p>
+                        <p>2HCl+Zn══ZnCl$_2$+H$_2$↑</p>
+             		 </div>
+				</div>
+			</div>
+       	<div class="card acidcard" data-key="硫酸">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                          <h2>硫酸 H$_2$SO$_4$</h2>
+                          <p>硫酸（sulfuric acid）也是一种常见的酸，他的化学式是H$_2$SO$_4$，相对分子质量为98。
+                          <h3>个性</h3>
+                          <p>1.硫酸的密度较大（$1.84g/cm^3$），常用质量分数为98%。</p>
+                          <p>2.硫酸是无色、粘稠、油状的液体</p>
+                          <p>3.硫酸难挥发</p>
+                          <p>4.硫酸易溶于水，且<strong>溶解时放出大量的热</strong></p>
+                          <p>5.浓硫酸具有<strong>脱水性</strong></p>
+                          <p>6.浓硫酸具有<strong>吸水性</strong></p>
+                          <p>7.浓硫酸具有<strong>强腐蚀性</strong></p>
+                      </div>
+				</div>
+			</div>   
+            <div class="card acidcard" data-key="硝酸">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                        <h2>硝酸 HNO$_3$</h2>
+                        <p>硝酸（nitric acid）也是一种在工业上有着广泛用途的酸，他的化学式是HNO$_3$，相对分子质量为89。
+                        <h3>个性</h3>
+                        <p>1.浓硝酸具有腐蚀性</p>
+                        <p>2.浓硝酸具有挥发性</p>
+                        <p>3.硝酸遇光易分解</p>
+               		</div>
+				</div>
+			</div>
+        <div class="card acidcard" data-key="硝酸">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                  	    <h2>氢氟酸 HF</h2>
+                        <p>氢氟酸（Hydrofluoric Acid）是一种在工业上常用的酸，他的化学式是HF。</p>
+                        <h4>个性</h4>
+                        <p>1.氢氟酸最浓时密度为$1.18g/cm^3$,常用质量分数为40%</p>
+                        <p>2.氢氟酸是氟化氢气体的水溶液，清澈，无色、发烟的腐蚀性液体，有剧烈刺激性气味。</p>
+                        <p>3.氢氟酸是一种弱酸，具有极强的腐蚀性，能强烈地腐蚀金属、玻璃和含硅的物体。</p>
+                        <p>4.随着HF溶液质量分数的提高，HF对碳钢的腐蚀速率是先升高后降低</p>
+                        <p>5.氢氟酸对于Si制品（即玻璃等）腐蚀性极强，所以不能存放在玻璃容器中，因此他需要存放在塑料（理论上讲，放在聚四氟乙烯做成的容器中会更好）、蜡质制或铅制的容器中</p>
+                        <p>补充：氢氟酸和玻璃发生反应</p>
+                        <p>SiO$_2$+4HF══SiF$_4$↑+2H$_2$O</p>
+                        <p></p>
+                        <p></p>
+                      </div>
+				</div>
+			</div>   
+     </div>
+	<div id="alkali" style="display:none; margin-top:80px;">
+		<div id="alkali-s">
+			<input type="text" placeholder="搜索关键词" id="alkaliinputbox">
+			<input type="checkbox" id="alkaliinputbox2">全文搜索
+		</div>
+         <div class="card alkalicard" data-key="定义">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                 <h2>碱的定义</h2>
+                 <p>在水中能够电离出$OH^-$和金属阳离子的物质叫做<strong>碱(alkali)</strong></p>  
+              </div>
+           </div>
+         </div>
+      </div>
+	  <div id="pss" style="display:none; margin-top:80px;">
+		<div id="pss-s">
+			<input type="text" placeholder="搜索关键词" id="pssinputbox">
+			<input type="checkbox" id="pssinputbox2">全文搜索
+		</div>
+        <div class="card psscard" data-key="定义">
+				<div style="display:flex">
+					<div style="margin-left:12px">
+                    <h2>离子检验问题</h2>
+					<p>一般的离子检验有以下几种</p>
+					<h4>1.Cl$^-$离子的检验</h4>
+					<p>方法：加AgNO$_3$</p>
+					<p><strong>现象：产生不溶于稀硝酸的白色沉淀（AgCl$_2$）</strong></p>
+					<p>反应方程式(以HCl为例):2HCl+AgNO$_3$══AgCl$_2$↓+HNO$_3$</p>
+					<p><strong>难点：CO$^{2-}_3$</strong></p>
+					<p>AgNO$_3$遇到CO$^{2-}_3$离子也会生成白色沉淀（Ag$_2$CO$_3$）,不过AgCO$_3$遇到稀硝酸会溶解</p>
+					<p>反应方程式:AgNO$_3$遇到CO$^{2-}_3$离子（以Na$_2$CO$_3$为例）：</p>
+					<p>Na$_2$CO$_3$+2AgNO$_3$══Ag$_2$CO$_3$↓+2NaNO$_3$</p>
+					<p>Ag$_2$CO$_3$沉淀遇到稀硝酸溶解：</p>
+					<p>Ag$_2$CO$_3$+HNO$_3$══AgNO$_3$+H$_2$O+CO$_2$↑</p>
+              </div>
+           </div>
+         </div>
+      </div>
+		<div id="about" style="display:none;margin-top:80px;">
+         <p>禁止将此网站外传，<del>禁止将此网站告诉huangshenjie or luguangxin</del></p>
+         
+         <p> 制作：Queue </p>
+         <button onclick="printall();"class="wb">打印所有内容</button>
+        <div class="card" data-key="">
+             <div style="display:flex">
+                 <div style="margin-left:12px">
+                    <h2> 更新日志</h2>
+                    <p>上次更新：2024.05.23</p>
+           			<p>版本号：Beta1.6</p>
+					<p>2024/5/23：更新解题技巧部分</p>
+                   	<p>2024/5/20：更新碱的部分</p>
+                    <p>2024/5/18：更新打印所有内容部分</p>
+                    <p>2024/5/17：更新酸部分，新增时钟，防止沉迷学习忘乎所以</p>
+                </div>
+             </div>
+         </div>
+          
+		</div>
+		<style>
+			button.wb
+			  		{
+			         border: transparent;
+				      background: transparent;
+			         position: relative;
+			 		 } 
+			  		button.wb::after{
+						content: "";
+						width: 0;
+						height: 1px;
+						background: #000;
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						transition: all .3s;
+					}
+					button.wb:hover::after
+			        {
+						left: 0%; width: 100%;
+					}
+					button.m{
+						position: relative;
+					}
+					button.m::after{
+						content: "";
+						width: 0;
+						height: 1px;
+						background: #000;
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						transition: all .3s;
+					}
+					button.m:hover::after
+			        {
+						left: 0%; width: 100%;
+					}
+			     
+					/*题目*/
+					.title{ 
+						width: 100%;
+						position: fixed;
+						top: 0;
+						left: 0;
+						color: #FFFFFF;
+						display: flex;
+					}
+					.title>h1{
+						color:#000000;
+					}
+					.title>div>button{
+						background:none;
+						border-style:none;
+					}
+					/*卡片*/
+					.card
+			  		{
+						padding: 10px;
+						border-radius: 10px;
+						background: #A9FFF7EE;
+						margin-top: 10px;
+						transition: all .2s ease;
+					}
+					/*输入框*/
+					input#inputbox, input#Tinputbox{
+						background: #EEE;
+						border: none;
+						padding: 5px;
+						transition: all .2s ease;
+					}
+		</style>
+		<style id="CardHoverEffect">
+			.card:hover{
+							background: #89FAF0;
+							box-shadow: 0px 0px 8px #000;
+						}
+		</style>
+	</body>
+</html>
